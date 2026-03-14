@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "node-fetch": "^3.3.2"
+  },
+  "name": "tidalwave",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "scripts": {
+    "start": "nodemon -V"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
