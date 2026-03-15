@@ -9,7 +9,8 @@ module.exports = {
         {
           type: 4,
           state: "hguhgdughusfgai",
-          emoji: "🔥"
+          emoji: "🔥",
+          name: "fydhhdicbdjcjdnxi"
         }
       ]
     })
