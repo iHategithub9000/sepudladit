@@ -31,6 +31,6 @@ module.exports = {
           depString += `${name} version: ${version}\n`
         }
         depString += `${pkg.name} version: ${pkg.version}\n`
-        msg.reply(`# :computer: Bot Info\nAPI Heartbeat: ${client.ws.ping}ms\nHostname: ${specs.hostname}\nPlatform: ${specs.platform}\nArchitecture: ${specs.arch}\nRelease: ${specs.release}\nUptime: ${specs.uptime}\nMemory: total ${specs.totalMemory}, free ${specs.freeMemory}\nCPU Speed: ${specs.cpuSpeed}\nCPU Count: ${specs.cpuCount}\nCPU Model: ${specs.cpuModel}\nOS Version: ${specs.version}\nNode version: ${process.version}\n${depString}`) 
+        msg.reply(`# :computer: Bot Info\nAPI Heartbeat: ${cl.ws.ping}ms\nHostname: ${specs.hostname}\nPlatform: ${specs.platform}\nArchitecture: ${specs.arch}\nRelease: ${specs.release}\nUptime: ${specs.uptime}\nMemory: total ${specs.totalMemory}, free ${specs.freeMemory}\nCPU Speed: ${specs.cpuSpeed}\nCPU Count: ${specs.cpuCount}\nCPU Model: ${specs.cpuModel}\nOS Version: ${specs.version}\nNode version: ${process.version}\n${depString}`) 
     }
 }
