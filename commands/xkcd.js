@@ -8,7 +8,7 @@ module.exports = {
     help_string: "[<comic_number>] - Displays an XKCD comic. If no comic number is provided, the latest comic will be displayed.",
     run: async (msg, argv, cl) => {
         num = (argv[1] ? argv[1] + "/" : false) || "";
-        const res = await (fetch())(`https://xkcd.com/${num}info.0.json`);
+        const res = await fetch()(`https://xkcd.com/${num}info.0.json`);
         
         res.text().then(json => {
             json = JSON.parse(json);
