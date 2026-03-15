@@ -10,8 +10,8 @@
     "nodemon": "^3.1.14"
   },
   "scripts": {
-    "start": "nohup nodemon -V &",
-    "log": "tail -f nohup.out",
+    "start": "rm nohup.out && nohup nodemon -V &",
+    "log": "tail -f -n 1000 nohup.out",
     "stop": "pkill -f node",
     "test_syntax": "node check-js-syntax.js captureLog",
     "update": "git fetch --all && git reset --hard origin/main && npm install -y"
