@@ -3,7 +3,7 @@
     "discord.js": "^14.25.1",
     "node-fetch": "^3.3.2"
   },
-  "name": "td_discord_bot",
+  "name": "tidalwave",
   "version": "1.0.0",
   "main": "main.js",
   "devDependencies": {
@@ -14,7 +14,7 @@
     "log": "tail -f nohup.out",
     "stop": "pkill -f node",
     "test_syntax": "node check-js-syntax.js captureLog",
-    "update": "git pull origin main && npm install -y"
+    "update": "git fetch --all && git reset --hard origin/main && npm install -y"
   },
   "keywords": [],
   "author": "",
