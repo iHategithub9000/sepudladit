@@ -27,6 +27,6 @@ module.exports = {
       .setColor(0x00ff00)
       .setFooter({text:"Announced by "+at})
 
-    ch.send({embeds:[embed], content: argv[2]=="true" ? "|| @everyone ||" : "|| Ping disabled ||")
+    ch.send({embeds:[embed], content: argv[2]=="true" ? "|| @everyone ||" : "|| Ping disabled ||"})
   }
 }
