@@ -1,6 +1,6 @@
 const { RestrictionsEnum } = require("../commandAccessRestrictions.js");
 const { EmbedBuilder, PresenceUpdateStatus } = require('discord.js');
-
+const fetch = (...args) => import("node-fetch").then(m => m.default(...args));
 module.exports = {
     accessRestriction: RestrictionsEnum.NONE,
     accessRestrictionArgs: "",
