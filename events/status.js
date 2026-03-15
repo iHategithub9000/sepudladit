@@ -1,4 +1,4 @@
-const { PresenceUpdateStatus, ActivityType } = require("discord.js");
+const { PresenceUpdateStatus } = require("discord.js");
 
 module.exports = {
   type: "ready",
@@ -8,7 +8,7 @@ module.exports = {
       status: PresenceUpdateStatus.Online,
       activities: [
         {
-          type: ActivityType.Custom,
+          type: 4,
           state: "hguhgdughusfgai",
           emoji: "🔥"
         }
