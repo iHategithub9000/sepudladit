@@ -1,5 +1,5 @@
 module.exports = {
-    name: "ready",
+    type: "ready",
     runOnce: true,
     run: async (_, cl) => {
         cl.guilds.cache.forEach(async g => {
