@@ -17,7 +17,8 @@ const reactions = {
     pat: { verb: "pats", solo: "wants to be pet" },
     scared: { verb: "is scared of", solo: "is scared" },
     tickle: { verb: "tickles", solo: "wants to be tickled" },
-    punch: { verb: "punches", solo: "punches themselves" }
+    punch: { verb: "punches", solo: "punches themselves" },
+    smack: { verb: "smacks", solo: "smacks themselves"}
 };
 
 module.exports = {
