@@ -28,6 +28,11 @@ module.exports = {
     run: async (msg, argv, cl) => {
 
         const action = argv[1];
+        if (action == "list") {
+            await msg.reply(JSON.stringify(Object.keys(reactions)))
+            return;
+        }
+        
         const data = reactions[action];
 
         if (!data) {
