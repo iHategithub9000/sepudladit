@@ -16,7 +16,8 @@ const reactions = {
     yes: { verb: "says yes to", solo: "says yes" },
     pat: { verb: "pats", solo: "wants to be pet" },
     scared: { verb: "is scared of", solo: "is scared" },
-    tickle: { verb: "tickles", solo: "wants to be tickled" }
+    tickle: { verb: "tickles", solo: "wants to be tickled" },
+    punch: { verb: "punches", solo: "punches themselves" }
 };
 
 module.exports = {
