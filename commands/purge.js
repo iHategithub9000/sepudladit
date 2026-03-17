@@ -27,7 +27,7 @@ module.exports = {
             .setFooter({text:"Purge requested by "+auth})
             .setColor(0x00ff00)
             for (let i = 0; i < 20; i++) {
-              await ch.send(":broom:"+("\n".repeat(200))+":broom: Filler message #"+i)
+              await ch.send(":broom:"+("\n".repeat(200))+":broom: Filler message #"+(i+1))
             }
             await ch.send({embeds:[embed]})
         } catch (e) {
