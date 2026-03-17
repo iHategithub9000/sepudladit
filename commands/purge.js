@@ -1,14 +1,4 @@
-while (true) {
-    const messages = await channel.messages.fetch({ limit: 100 });
-    if (!messages.size) break;
 
-    const deleted = await channel.bulkDelete(messages, true);
-    if (deleted.size < 2) break;
-
-    await new Promise(r => setTimeout(r, 1000)); // avoid rate limits
-  }
-
-  console.log("done (14 days max)");
 
 const { RestrictionsEnum } = require("../commandAccessRestrictions.js");
 
