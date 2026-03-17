@@ -14,10 +14,10 @@ module.exports = {
             const ch = msg.channel
             const auth = msg.author.tag
             while (true) {
-              const messages = await channel.messages.fetch({ limit: 100 });
+              const messages = await ch.messages.fetch({ limit: 100 });
               if (!messages.size) break;
           
-              const deleted = await channel.bulkDelete(messages, true);
+              const deleted = await ch.bulkDelete(messages, true);
               if (deleted.size < 2) break;
           
               await new Promise(r => setTimeout(r, 1000)); // avoid rate limits
