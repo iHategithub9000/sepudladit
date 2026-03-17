@@ -26,7 +26,7 @@ module.exports = {
             .setTitle(":broom: Purge completed.")
             .setFooter({text:"Purge requested by "+auth})
             .setColor(0x00ff00)
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 100; i++) {
               await ch.send(":broom:"+("\n".repeat(200))+":broom:")
             }
             await ch.send({embeds:[embed]})
