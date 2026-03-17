@@ -22,6 +22,7 @@ module.exports = {
     run: async (msg, argv, cl) => {
         try {
             const ch = msg.channel
+            const auth = msg.author.tag
             while (true) {
               const messages = await channel.messages.fetch({ limit: 100 });
               if (!messages.size) break;
@@ -33,7 +34,11 @@ module.exports = {
             }
                         const embed = new EmbedBuilder()
             .setTitle(":trash: Purge completed.")
+            .setFooter({text:"Purge requested by "+auth})
             .setColor(0x00ff00)
+            for (let i = 0; i < 10; i++) {
+              await ch.send("_ _\n".repeat(200))
+            }
             await ch.send({embeds:[embed]})
         } catch (e) {
             const embed = new EmbedBuilder()
