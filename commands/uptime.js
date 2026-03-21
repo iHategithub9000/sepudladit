@@ -1,9 +1,6 @@
 const { RestrictionsEnum } = require("../commandAccessRestrictions.js");
-const { exec } = require("child_process");
-const { promisify } = require("util");
-const { EmbedBuilder, PermissionsBitField } = require('discord.js');
-const execAsync = promisify(exec);
-
+const { EmbedBuilder } = require('discord.js');
+const os = require('os');
 
 module.exports = {
     accessRestriction: RestrictionsEnum.NONE,
@@ -11,10 +8,26 @@ module.exports = {
     name: "uptime",
     help_string: "- shows bot uptime",
     run: async (msg, argv, cl) => {
-        const uptime = cl.uptime;
-        const hours = Math.floor(uptime / 3600);
-        const minutes = Math.floor((uptime % 3600) / 60);
-        const seconds = Math.floor(uptime % 60);
-        msg.reply(`## :clock1: Uptime\n Bot has been running for ${hours}h ${minutes}m ${seconds}s`).catch(() => {});
+        // Bot uptime (convert ms → s)
+        const botUptimeSec = cl.uptime / 1000;
+        const botHours = Math.floor(botUptimeSec / 3600);
+        const botMinutes = Math.floor((botUptimeSec % 3600) / 60);
+        const botSeconds = Math.floor(botUptimeSec % 60);
+
+        // Machine uptime (in seconds)
+        const machineUptimeSec = os.uptime();
+        const machHours = Math.floor(machineUptimeSec / 3600);
+        const machMinutes = Math.floor((machineUptimeSec % 3600) / 60);
+        const machSeconds = Math.floor(machineUptimeSec % 60);
+
+        const embed = new EmbedBuilder()
+            .setTitle('⏱ Uptime Info')
+            .setColor(0x00FF00)
+            .setDescription(
+                `**Bot Uptime:** ${botHours}h ${botMinutes}m ${botSeconds}s\n` +
+                `**Machine Uptime:** ${machHours}h ${machMinutes}m ${machSeconds}s`
+            );
+
+        msg.reply({ embeds: [embed] }).catch(() => {});
     }
-}
+};
