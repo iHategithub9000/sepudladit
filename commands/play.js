@@ -54,7 +54,7 @@ module.exports = {
                         embeds: [
                             new EmbedBuilder()
                                 .setTitle("Error")
-                                .setDescription("Failed to load YouTube video")
+                                .setDescription("Failed to load YouTube video.\n```"+err.stack+"\n```")
                                 .setColor("#FF0000")
                         ]
                     });
