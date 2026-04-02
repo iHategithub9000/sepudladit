@@ -70,7 +70,7 @@ module.exports = {
     help_string: "<question> - Ask the magic 8-ball a question.",
     run: async (msg, argv, cl) => {
         msg.reply("Shaking the magic 8-ball...").then(sentMsg => {
-            setTimeout(() => {
+            setTimeout(async() => {
                 const embed = new EmbedBuilder()
                 .setTitle(":8ball: The magic 8-ball says...")
                 .setDescription(await random8ballResponse(msg.author))
