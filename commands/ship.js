@@ -1,5 +1,5 @@
 const { RestrictionsEnum } = require("../commandAccessRestrictions.js");
-const { EmbedBuilder, PresenceUpdateStatus } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     accessRestriction: RestrictionsEnum.NONE,
@@ -11,6 +11,7 @@ module.exports = {
             msg.reply("Please mention two users to ship together.");
             return;
         }
+
         const user1 = msg.mentions.users.first();
         const user2 = msg.mentions.users.last();
         if (!user1 || !user2) {
@@ -18,10 +19,21 @@ module.exports = {
             return;
         }
 
+        // Check if user wants to rig the result
+        let percentage = Math.floor(Math.random() * 101);
+        const rigArg = argv.find(arg => arg.startsWith("rig:"));
+        if (rigArg) {
+            const rigValue = parseInt(rigArg.split(":")[1]);
+            if (!isNaN(rigValue) && rigValue >= 0 && rigValue <= 100) {
+                percentage = rigValue;
+            }
+        }
+
         const embed = new EmbedBuilder()
             .setTitle("Compatibility")
-            .setDescription(`${user1.username} and ${user2.username} are ${Math.floor(Math.random() * 100) + 0}% compatible!`)
-            .setColor(0x00ff00)
+            .setDescription(`${user1.username} and ${user2.username} are ${percentage}% compatible!`)
+            .setColor(0x00ff00);
+
         msg.reply({ embeds: [embed] });
     }
 }
