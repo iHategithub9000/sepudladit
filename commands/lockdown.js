@@ -23,16 +23,16 @@ module.exports = {
                     CreatePrivateThreads: false
                 }
                 : {
-                    SendMessages: true,
-                    AddReactions: true,
-                    SendMessagesInThreads: true,
-                    CreatePublicThreads: true,
-                    CreatePrivateThreads: true
+                    SendMessages: null,
+                    AddReactions: null,
+                    SendMessagesInThreads: null,
+                    CreatePublicThreads: null,
+                    CreatePrivateThreads: null
                 };
 
             await channel.permissionOverwrites.edit(everyone, perms);
 
-            // Also apply to all active threads in the channel
+            // Apply to all active threads in the channel
             if (channel.threads) {
                 const threads = await channel.threads.fetch();
                 threads.threads.forEach(thread => {
@@ -40,10 +40,7 @@ module.exports = {
                 });
             }
 
-            return msg.reply(action === "on"
-                ? "🔒 Channel locked!"
-                : "🔓 Channel unlocked!"
-            );
+            return msg.reply(action === "on" ? "Channel locked!" : "Channel unlocked!");
 
         } catch (e) {
             const embed = new EmbedBuilder()
