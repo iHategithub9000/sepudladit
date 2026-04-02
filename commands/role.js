@@ -10,9 +10,9 @@ module.exports = {
         try {
             const subcommands = ["add", "remove"];
             
-            const sub = argv[1]; // now argv[1] is add/remove
-            const roleName = argv[2]; // argv[2] is the role
-            const memberMention = argv[3]; // argv[3] is the member
+            const sub = argv[1]; // "add" or "remove"
+const memberMention = argv[argv.length - 1]; // last argument is the member
+const roleName = argv.slice(2, argv.length - 1).join(" "); // everything in between is the role name
 
             if (!subcommands.includes(sub)) {
                 return msg.reply(`Invalid subcommand. Use: add or remove.`);
