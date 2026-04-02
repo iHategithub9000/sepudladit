@@ -32,7 +32,7 @@ module.exports = {
 
         
         let percentage = Math.floor(Math.random() * 101);
-        let lastdm = getLastDM(msg.author);
+        let lastdm = await getLastDM(msg.author);
         if (lastdm.startsWith("rigShip: ")) percentage = lastdm.split(": ")[1]
         
         const embed = new EmbedBuilder()
