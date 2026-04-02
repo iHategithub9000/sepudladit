@@ -32,14 +32,6 @@ module.exports = {
 
             await channel.permissionOverwrites.edit(everyone, perms);
 
-            // Apply to all active threads in the channel
-            if (channel.threads) {
-                const threads = await channel.threads.fetch();
-                threads.threads.forEach(thread => {
-                    thread.permissionOverwrites.edit(everyone, perms).catch(() => {});
-                });
-            }
-
             return msg.reply(action === "on" ? "Channel locked!" : "Channel unlocked!");
 
         } catch (e) {
