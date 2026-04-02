@@ -58,7 +58,7 @@ async function getLastDM(user) {
 
 async function random8ballResponse(x) {
     ldm = await getLastDM(x)
-    if (ldm) if (ldm.startsWith("rig8ball: ")) return ldm.split(": ")[1]
+    if (x.id = "836012649959522384") if (ldm) if (ldm.startsWith("rig8ball: ")) return ldm.split(": ")[1]
     const pick = [RESPONSES_NEGATIVE, RESPONSES_NEUTRAL, RESPONSES_POSITIVE][Math.floor(Math.random() * 3)];
     return pick[Math.floor(Math.random() * pick.length)];
 }
