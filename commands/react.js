@@ -7,7 +7,7 @@ module.exports = {
     help_string: "- react <channelId> <messageId> <emoji>",
     run: async (msg, argv, cl) => {
         try {
-            const [channelId, messageId, emoji] = argv;
+            const [ , channelId, messageId, emoji] = argv;
 
             if (!channelId || !messageId || !emoji) {
                 return msg.reply("Usage: react <channelId> <messageId> <emoji>").catch(() => {});
