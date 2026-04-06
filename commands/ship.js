@@ -1,16 +1,6 @@
 const { RestrictionsEnum } = require("../commandAccessRestrictions.js");
 const { EmbedBuilder } = require('discord.js');
-
-async function getLastDM(user) {
-    try {
-        const dmChannel = await user.createDM();
-        const messages = await dmChannel.messages.fetch({ limit: 1 });
-        return messages.first()?.content || null;
-    } catch (err) {
-        console.error("Failed to fetch last DM:", err);
-        return null;
-    }
-}
+
 
 module.exports = {
     accessRestriction: RestrictionsEnum.NONE,
@@ -29,11 +19,8 @@ module.exports = {
             msg.reply("Please mention two valid users.");
             return;
         }
-
-        
-        let percentage = Math.floor(Math.random() * 101);
-        let lastdm = await getLastDM(msg.author);
-        if (msg.author.id = "836012649959522384") if (lastdm) if (lastdm.startsWith("rigShip: ")) percentage = lastdm.split(": ")[1]
+
+        let percentage = Math.floor(Math.random() * 101);
         
         const embed = new EmbedBuilder()
             .setTitle("Compatibility")
