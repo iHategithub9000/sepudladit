@@ -2,6 +2,7 @@ module.exports = {
   type: "messageCreate",
   runOnce: false,
   run: async (message,client) => {
+    console.log("DM EVENT FIRED");
     // Ignore bots
     if (message.author.bot) return;
 
