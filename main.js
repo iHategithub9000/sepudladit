@@ -1,7 +1,8 @@
 const { 
   Client,
   GatewayIntentBits,
-  EmbedBuilder
+  EmbedBuilder,
+  Partials
 } = require('discord.js');
 const fs = require('fs');
 const AR = require("./commandAccessRestrictions.js");
@@ -14,7 +15,9 @@ const client = new Client({
     GatewayIntentBits.DirectMessages,
     GatewayIntentBits.GuildMembers
   ],
-  partials: ["CHANNEL"]
+  partials: [
+    Partials.Channel
+  ]
 });
 
 
