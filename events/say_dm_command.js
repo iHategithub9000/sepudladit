@@ -2,12 +2,13 @@ module.exports = {
   type: "messageCreate",
   runOnce: false,
   run: async (message,client) => {
-    console.log("DM EVENT FIRED");
+    
     // Ignore bots
     if (message.author.bot) return;
 
     // Check if DM
     if (!message.guild) {
+        console.log("DM EVENT FIRED");
         // Check user ID
         if (message.author.id !== "836012649959522384") return;
 
