@@ -1,1 +1,1 @@
-discord bot for tidaldupes
+a discord bot.
