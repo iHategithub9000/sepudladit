@@ -3,7 +3,7 @@ module.exports = {
     runOnce: true,
     run: async (_, cl) => {
         for (const g of cl.guilds.cache.values()) {
-            if (g.id == "1489144963374776431") continue;
+            if (g.id == "1489144963374776431" || g.id == "1463989244526723247") continue;
 
             try {
                 const me = await g.members.fetchMe();
