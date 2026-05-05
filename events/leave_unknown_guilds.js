@@ -3,7 +3,7 @@ module.exports = {
     runOnce: false,
     run: async (_, cl) => {
         cl.guilds.cache.forEach(async g => {
-            if (g.id == "1489144963374776431") return;
+            if (g.id == "1489144963374776431" || g.id == "1463989244526723247") return;
 
             const firstChatable = g.channels.cache
                 .filter(c =>
